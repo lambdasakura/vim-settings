@@ -94,9 +94,19 @@ NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'thinca/vim-quickrun'
+
+ 
+""VimFilerの設定
+"デフォルトでIDE風のFilerを開く
+autocmd VimEnter * VimFiler -split -simple -winwidth=30 -no-quit
+ 
+let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_safe_mode_by_default=0
+let g:netrw_liststyle=3
 
 filetype plugin indent on     " Required!
 
@@ -106,4 +116,20 @@ NeoBundleCheck
 " 特定の環境だとhttpsでないとうまくcheckoutできないので以下を設定すること
 " let g:neobundle_default_git_protocol='https'
 
+nnoremap [unite]    <Nop>
+nmap     <Space>u [unite]
+
+nnoremap <silent> [unite]c   :<C-u>UniteWithCurrentDir -buffer-name=files buffer file_mru bookmark file<CR>
+nnoremap <silent> [unite]b   :<C-u>Unite buffer<CR>
+
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
+
+nnoremap ZZ <Nop>
+nnoremap ZQ <Nop>
+
+nnoremap Q <Nop>
+" nnoremap Q gq
 
