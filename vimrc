@@ -27,7 +27,23 @@ NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'thinca/vim-quickrun'
 
+
+NeoBundleLazy "dag/vim2hs",                  {"autoload" : { "filetypes" : ["haskell"] }}
+NeoBundleLazy "eagletmt/ghcmod-vim",         {"autoload" : { "filetypes" : ["haskell"] }}
+NeoBundleLazy "eagletmt/unite-haddock",      {"autoload" : { "filetypes" : ["haskell"] }}
+NeoBundleLazy "ujihisa/neco-ghc",            {"autoload" : { "filetypes" : ["haskell"] }}
+NeoBundleLazy "ujihisa/unite-haskellimport", {"autoload" : { "filetypes" : ["haskell"] }}
+
+"
 " NeoBundle 'davidoc/taskpaper.vim'
 " NeoBundle 'itchyny/lightline.vim'
 " NeoBundle 'altercation/vim-colors-solarized'
@@ -117,8 +133,7 @@ if match($TERM, "screen")!=-1
           set term=xterm
 endif
 
-"---------------------------------------------------------------------------
-""VimFilerの設定
+"VimFilerの設定
 "---------------------------------------------------------------------------
 "デフォルトでIDE風のFilerを開く
 autocmd VimEnter * VimFiler -split -simple -winwidth=30 -no-quit
